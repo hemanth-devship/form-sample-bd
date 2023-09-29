@@ -11,6 +11,7 @@ var Todo = require("./models/todo.model");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var loginRouter = require("./routes/login");
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(bodyParser.text({ limit: '200mb' }));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/login", loginRouter);
 
 app.post("/todos", async(req, res) => {
     // console.log(req.body);
